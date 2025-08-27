@@ -1,1 +1,1 @@
-# Di-rio_Multim-dia_Interativo
+# Diário_Multimídia_Interativo
