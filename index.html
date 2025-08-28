@@ -11,98 +11,83 @@
 <body>
     <header class="header">
         <h1>AvaliaPlay</h1>
-        <h2>O AvaliaPlay é um sistema inovador desenvolvido para centralizar e organizar avaliações de jogos, filmes e séries em um só lugar.</h2>  
-        <h2>A plataforma permite armazenar dados multimídia, como capas, trailers e trilhas sonoras, além de registrar notas e opiniões detalhadas.</h2>
+
+        <nav>
+            <ul>
+                <li><a href="#adicionar">Adicionar Nova Entrada</a></li>
+                <li><a href="#entradas">Minhas Entradas</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="main-container">
-        <section class="form-section">
+        <section class="form-section" id="adicionar">
             <h3>Adicionar Nova Entrada</h3>
-            <form>
-                <div class="form-group">
-                    <label for="title">Título</label>
-                    <input type="text" id="titulo" name="titulo" placeholder="Ex: Oppenheimer, O Senhor dos Anéis, Marvel Rivals">
-                </div>
-                <div class="form-group">
-                    <label for="tipo_midia">Tipo de Mídia</label>
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="tipo_midia" value="tipo_filme"> Filme
-                        </label>
-                        <label>
-                            <input type="radio" name="tipo_midia" value="tipo_livro"> Livro
-                        </label>
-                        <label>
-                            <input type="radio" name="tipo_midia" value="tipo_jogo"> Jogo
-                        </label>
+            <div class="box-x">
+                <form id="form">
+                    <div class="form-group">
+                        <label for="title">Título</label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Ex: Oppenheimer, O Senhor dos Anéis, Marvel Rivals">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="data">Data de Conclusão/Experiência</label>
-                    <input type="date" id="data" name="data" style="font-size: 1.2em">
-                </div>
-                <div class="form-group">
-                    <label for="text">Sua Avaliação</label>
-                    <input type="range" id="avaliacao" name="avaliacao" min="0" max="10" value="5" oninput="valorAvaliacao.textContent = this.value">
-                    <span id="valorAvaliacao">5</span>
-                </div>
-                <div class="form-group">
-                    <label for="text">Breve Resenha ou Comentário</label>
-                    <textarea name="texto" rows="10" cols="90" placeholder="O que achou? O que gostou? O que não gostou? Recomendaria?..."></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="tipo_midia">Tipo de Mídia</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="tipo_midia" value="Filme"> Filme
+                            </label>
+                            <label>
+                                <input type="radio" name="tipo_midia" value="Livro"> Livro
+                            </label>
+                            <label>
+                                <input type="radio" name="tipo_midia" value="Jogo"> Jogo
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="data">Data de Conclusão/Experiência</label>
+                        <input type="date" id="data" name="data" style="font-size: 1.2em">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Sua Avaliação</label>
+                        <input type="range" id="avaliacao" name="avaliacao" min="0" max="10" value="5" oninput="valorAvaliacao.textContent = this.value">
+                        <span id="valorAvaliacao">5</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Breve Resenha ou Comentário</label>
+                        <textarea name="texto" id="texto" rows="10" cols="90" placeholder="O que achou? O que gostou? O que não gostou? Recomendaria?..."></textarea>
+                    </div>
 
-                <div class="form-group">
-                    <label for="text">Link do Trailer/Capa (URL)</label>
-                    <input type="text" id="trailer" name="trailer" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                </div>
+                    <div class="form-group">
+                        <label for="text">Link do Trailer/Capa (URL)</label>
+                        <input type="text" id="trailer" name="trailer" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    </div>
 
-                <div class="button-group">
-                    <input type="submit" value="Adicionar">
-                </div>
+                    <div class="button-group">
+                        <input type="submit" value="Adicionar">
+                    </div>
 
-            </form>
+                </form>
+            </div>
+            
         </section>
 
-        <section class="content-section">
+        <section class="content-section" id="entradas">
             <h3>Minhas Entradas</h3>
-            <div class="button-group">
-                <input type="reset" value="Limpar">
-            </div>
-            <div class="cards-container">
-                <!-- Card de imagem -->
-                <div class="card">
-                    <div class="card-media">
-                    <img src="https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-oppenheimer-c-pop-arte-poster/poparteskins2/pos-03405-30x45cm/5c48f3fe2d8a43adaa5a3a731b8b9f31.jpeg" alt="Capa Filme">
-                    </div>
-                    <div class="card-content">
-                    <h4>Oppenheimer</h4>
-                    <p><strong>Tipo:</strong> Filme</p>
-                    <p><strong>Data:</strong> 22/07/2025</p>
-                    <p><strong>Avaliação:</strong> 9/10</p>
-                    <p>Resenha curta do filme...</p>
-                    </div>
+            <div class="box-x">
+                <div class="button-group">
+                <input type="reset" id="limpar" value="Limpar">
                 </div>
-
-                <!-- Card de vídeo -->
-                <div class="card">
-                    <div class="card-media">
-                    <iframe width="100%" height="150" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="card-content">
-                    <h4>Marvel Rivals</h4>
-                    <p><strong>Tipo:</strong> Jogo</p>
-                    <p><strong>Data:</strong> 15/08/2025</p>
-                    <p><strong>Avaliação:</strong> 7/10</p>
-                    <p>Resenha curta do jogo...</p>
-                    </div>
+                <div class="cards-container" id="cards-container">
+                    
                 </div>
-                
-                <!-- Mais cards podem ser adicionados -->
             </div>
+            
         </section>
+
     </main>
     <footer>
         <p>&copy; 2025 AvaliaPlay. Todos os direitos reservados.</p>
     </footer>
+<script src="script.js" defer></script>
 </body>
 </html>
