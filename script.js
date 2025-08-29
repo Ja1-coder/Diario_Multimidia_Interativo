@@ -1,10 +1,24 @@
 //Lógica para adicionar entradas ao local Storage
+let hoje = new Date();
+let dia = String(hoje.getDate()).padStart(2, '0');
+let mes = String(hoje.getMonth() + 1).padStart(2, '0');
+let ano = hoje.getFullYear();
+
+let dataHoje = `${ano}-${mes}-${dia}`;
+
+document.getElementById("data").setAttribute("max", dataHoje);
+
 document.getElementById("form").addEventListener("submit", function(event) {
     event.preventDefault();  // Impede o envio padrão do formulário
 
     const titulo = document.getElementById("titulo").value;
     const tipoMidia = document.querySelector('input[name="tipo_midia"]:checked')?.value || "";
-    const data = document.getElementById("data").value;
+    let data = document.getElementById("data").value;
+    let dataEscolhida = new Date(data); 
+    if(dataEscolhida > hoje){
+        alert("Data inválida!");
+        return;
+    }
     const avaliacao = document.getElementById("avaliacao").value;
     const texto = document.getElementById("texto").value;
     const trailer = document.getElementById("trailer").value;
