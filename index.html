@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
 
     <title>AvaliaPlay</title>
 </head>
@@ -27,13 +29,13 @@
                 <form id="form">
                     <div class="form-group">
                         <label for="title">Título</label>
-                        <input type="text" id="titulo" name="titulo" placeholder="Ex: Oppenheimer, O Senhor dos Anéis, Marvel Rivals">
+                        <input type="text" id="titulo" name="titulo" placeholder="Ex: Oppenheimer, O Senhor dos Anéis, Marvel Rivals" required>
                     </div>
                     <div class="form-group">
                         <label for="tipo_midia">Tipo de Mídia</label>
                         <div class="radio-group">
                             <label>
-                                <input type="radio" name="tipo_midia" value="Filme"> Filme
+                                <input type="radio" name="tipo_midia" value="Filme" checked> Filme
                             </label>
                             <label>
                                 <input type="radio" name="tipo_midia" value="Livro"> Livro
@@ -45,21 +47,21 @@
                     </div>
                     <div class="form-group">
                         <label for="data">Data de Conclusão/Experiência</label>
-                        <input type="date" id="data" name="data" style="font-size: 1.2em">
+                        <input type="date" id="data" name="data" style="font-size: 1.2em" required>
                     </div>
                     <div class="form-group">
                         <label for="text">Sua Avaliação</label>
-                        <input type="range" id="avaliacao" name="avaliacao" min="0" max="10" value="5" oninput="valorAvaliacao.textContent = this.value">
-                        <span id="valorAvaliacao">5</span>
+                        <input type="range" id="avaliacao" name="avaliacao" min="0" max="10" value="0" oninput="valorAvaliacao.textContent = this.value">
+                        <span id="valorAvaliacao">0</span>
                     </div>
                     <div class="form-group">
                         <label for="text">Breve Resenha ou Comentário</label>
-                        <textarea name="texto" id="texto" rows="10" cols="90" placeholder="O que achou? O que gostou? O que não gostou? Recomendaria?..."></textarea>
+                        <textarea name="texto" id="texto" rows="10" cols="90" placeholder="O que achou? O que gostou? O que não gostou? Recomendaria?..." required></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="text">Link do Trailer/Capa (URL)</label>
-                        <input type="text" id="trailer" name="trailer" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                        <input type="text" id="trailer" name="trailer" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" required>
                     </div>
 
                     <div class="button-group">
@@ -77,13 +79,13 @@
                 <div class="button-group">
                 <input type="reset" id="limpar" value="Limpar">
                 </div>
-                <div class="cards-container" id="cards-container">
-                    
-                </div>
+                <article class="cards-container" id="cards-container">
+                    // Cards serão adicionados aqui
+                </article>
             </div>
-            
         </section>
 
+        
     </main>
     <footer>
         <p>&copy; 2025 AvaliaPlay. Todos os direitos reservados.</p>

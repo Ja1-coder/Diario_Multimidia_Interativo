@@ -90,3 +90,7 @@ document.getElementById("limpar").addEventListener("click", () => {
     alert("Entradas removidas com sucesso!");
     renderCards();
 });
+
+
+
+
